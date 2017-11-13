@@ -21,7 +21,7 @@ class UserPage extends Component {
             <div>
                 <h1> User Page</h1>
                 {this.state.users.map(user => (
-          <Link key={user._id} to={`/${user._id}`}>
+          <Link key={user.id} to={`/${user.id}`}>
                 <h3> Name: {user.name}</h3>
                 <h3> Age: {user.age}</h3>
                 <h3> Image: {user.image_url}</h3>

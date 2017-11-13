@@ -6,6 +6,8 @@ import HomePage from './components/HomePage'
 import GoalPage from './components/GoalPage'
 import ActionPage from './components/ActionPage'
 import UserPage from './components/UserPage'
+import IdPage from './components/IdPage'
+
 
 
 
@@ -18,8 +20,10 @@ class App extends Component {
        <Router>
 
        <Switch>
+
       <Route exact path="/" component={HomePage} />
       <Route exact path="/UserPage" component={UserPage} />
+      <Route exact path="/UserPage/:id" component={IdPage} />
       <Route exact path="/GoalPage" component={GoalPage}/>
       <Route exact path="/ActionPage" component={ActionPage}/>
 

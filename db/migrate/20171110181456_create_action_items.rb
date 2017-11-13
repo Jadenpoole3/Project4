@@ -4,6 +4,7 @@ class CreateActionItems < ActiveRecord::Migration[5.1]
       t.string :content
       t.boolean :active
       t.string :name
+      t.references :goal, foreign_key: true
 
       t.timestamps
     end

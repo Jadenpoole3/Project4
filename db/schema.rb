@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20171110181456) do
     t.string "content"
     t.boolean "active"
     t.string "name"
+    t.bigint "goal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_action_items_on_goal_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -42,5 +44,6 @@ ActiveRecord::Schema.define(version: 20171110181456) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "action_items", "goals"
   add_foreign_key "goals", "users"
 end

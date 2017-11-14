@@ -34,8 +34,9 @@ class NavBar extends Component {
                 <ul>
   <li><a href="/">Home</a></li>
   <li><a href="/GoalPage">Goals</a></li>
-  <li><a href="/UserPage">User</a></li>
+  <li><a href="/users">User</a></li>
   <li><a href="/ActionPage">Action Page</a></li>
+  <li><a href="/SignUpPage">Sign Up</a></li>
 </ul>
             </Nav>
         );

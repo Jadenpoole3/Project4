@@ -172,7 +172,7 @@ class SignUpPage extends Component {
     }
     render() {
 		if(this.state.redirect){
-			return <Redirect to={`/api/users/${this.state.userId}`}/>
+			return <Redirect to={`/api/users/`}/>
 		}
 	
 

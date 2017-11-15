@@ -125,10 +125,16 @@ class UserPage extends Component {
         clonedusers.push(res.data)
         this.setState({ users: clonedusers })
     }
+    deleteUser = async (user) => {
+        console.log(user)
+        const response = await axios.delete(`/users/${user.id}`)
+        await this.setState({ posts: response.data })
+
+    }
     render() {
         return (
             <Card>
-                <h1> USer </h1>
+                <h1> Users </h1>
                 {this.state.users.map((user) => {
                     return (
                     <div>

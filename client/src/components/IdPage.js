@@ -164,6 +164,8 @@ class IdPage extends Component {
 
     async componentWillMount() {
         this.getUser()
+        this.getAllGoals()
+        
         
     }
     getUser = async () => {
@@ -180,8 +182,10 @@ class IdPage extends Component {
         }
     }
     getAllGoals = async () => {
-        const res = await axios.get('/api/users/:id/goals')
-        this.setState({fields: res.data})
+        const { userId } = this.props.match.params        
+        const res = await axios.get(`/api/users/${userId}/goals`)
+        console.log(res.data)
+        this.setState({goals: res.data})
     }
     handleDelete = async () => {
         const userId = this.props.match.params.userId
@@ -221,30 +225,29 @@ class IdPage extends Component {
            <div>
                <Follow>
 
-               <h1>Be Happy <small>A social network for programmers.</small></h1>
+               <h1>Be Happy <small>Social Network for Inspriational Quotes.</small></h1>
                {this.state.goals.map((goal) => {
                     return (
 <header>
 <Link key={goal.id} to={`/${goal.id}`} />
-  <figure class="profile-banner">
+  <figure className="profile-banner">
     <img src="https://unsplash.it/975/300" alt="Profile banner" />
   </figure>
-  <figure class="profile-picture">
+  <figure className="profile-picture" url={this.state.user.image_url}>
    
-    
   </figure>
-  <div class="profile-stats">
+  <div className="profile-stats">
     <ul>
       <li>13    <span>Projects</span></li>
       <li>1,354 <span>Commits</span></li>
       <li>32    <span>Following</span></li>
       <li>324   <span>Followers</span></li>
     </ul>
-    <a href="javascript:void(0);" class="follow">
-      Follow Nick
+    <a href="javascript:void(0);" className="follow">
+    Follow {this.state.user.name}
     </a>
   </div>
-  <h1> Hey <small>nrdobie</small></h1>
+  <h1> {this.state.user.name}<small></small></h1>
 </header>
                )})}     
     </Follow>

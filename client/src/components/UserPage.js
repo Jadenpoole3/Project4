@@ -139,8 +139,8 @@ class UserPage extends Component {
                             <img src={user.image_url} alt="profile-sample4" className="profile" />
                             <h2>{user.name}<span></span></h2>
                             <p>{user.bio} </p>
-                            <a href="/:userId" className="follow">Follow</a>
-                            <a href="#" className="info">{user.id}</a>
+                            <Link to={`/users/${user.id}`} className="follow">Follow</Link>
+                            <a href="#" className="info">Goals</a>
                         </figcaption>
 
                     </figure>

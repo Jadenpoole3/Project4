@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios'
+import {Redirect} from 'react-router-dom'
+
 
 const Sign = styled.div`
 body{
@@ -148,8 +151,9 @@ class SignUpPage extends Component {
             bio: '',
             age: '',
             image_url: ''
-
-        }
+		},
+		userId: 0,
+		redirect: false
     }
     handleChange = (event) => {
         const attribute = event.target.name 
@@ -158,52 +162,60 @@ class SignUpPage extends Component {
         this.setState({newUser: updateUser})
     }
     handleSubmit = async (event) => {
-        event.preventDefault()
-        this.props.updateUser(this.state.newUser)
+		event.preventDefault()
+		const res = await axios.post('/api/users', {
+			"user": this.state.newUser
+		})
+		
+		this.setState({redirect: true, userId: res.data.id})
+		
     }
     render() {
+		if(this.state.redirect){
+			return <Redirect to={`/api/users/${this.state.userId}`}/>
+		}
+	
+
         return (
             <Sign>
-            <div class="header">
-            <div class="logo">
-			<img src="http://gourmetlearning.com/wordpress/wp-content/uploads/2016/09/bam-facebook-logo.png"/>
+            <div className="header">
+            <div className="logo">
+			
 		    </div>
-            <div class="giris">
-			<input type="text" placeholder="Kullanıcı Adı"/>
-			<input type="password" placeholder="Şifre"/>
+            <div className="giris">
+			<input type="text" placeholder="Email"/>
+			<input type="password" placeholder="Password"/>
 			<button>Login</button>
 		</div>
-        <div class="container">
-		<div class="soltaraf">
+        <div className="container">
+		<div className="soltaraf">
 		<b>This is Be Happy. A place where you can post inspirational quotes and achieve your goals.</b>
 		<img src="https://www.facebook.com/rsrc.php/v3/yx/r/pyNVUg5EM0j.png"/>
         </div>
 		
-        <div class="kayit">
+        <div className="kayit">
 		<h1>Sign Up</h1>
 		<p>Please fill out the form to get started</p>
         <form onSubmit={this.handleSubmit}>
+		
 		<input 
-        onChange={this.handleChange} class="kutus1" type="text" name="Name" placeholder="Name"/>
+        onChange={this.handleChange} className="kutus1" type="text" name="name" value={this.state.newUser.name} placeholder="Name"/>
+		
 		<input 
-        onChange={this.handleChange} class="kutus1" type="integer" placeholder="Age"/>
+        onChange={this.handleChange} className="kutus1" type="integer" name="age" value={this.state.newUser.age} placeholder="Age"/>
+		
 		<input 
-        onChange={this.handleChange} class="kutus2" type="text" placeholder="Image Url"/>
+        onChange={this.handleChange} className="kutus2" type="text" name="image_url" value={this.state.newUser.image_url} placeholder="Image Url"/>
+		
 		<input 
-        onChange={this.handleChange} class="kutus2" type="password" placeholder="Bio"/>
-        <small>Be Happy is for everyone who needs a little motivation</small>
+        onChange={this.handleChange} className="kutus2" type="text" name="bio" value={this.state.newUser.bio} placeholder="Bio"/>
+       
+	    <small>Be Happy is for everyone who needs a little motivation</small>
 		<button><b>Sign Up</b></button>
         </form>  
         </div>
         </div>
-        <div class="footer">
-		Türkçe
-		<a href="#">İngilizce</a>
-		<a href="#">Arapça</a>
-		<a href="#">Kürtçe</a>
-		<a href="#">Rusça</a>
-		<a href="#">Portekizce</a>
-	</div>
+        
             </div>
            </Sign>         
         );

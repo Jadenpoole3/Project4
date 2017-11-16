@@ -144,9 +144,12 @@ class UserPage extends Component {
                         <figcaption>
                             <img src={user.image_url} alt="profile-sample4" className="profile" />
                             <h2>{user.name}<span></span></h2>
+                            <h2>{user.age}</h2>
                             <p>{user.bio} </p>
                             <Link to={`/users/${user.id}`} className="follow">Follow</Link>
                             <a href="#" className="info">Goals</a>
+                            <Link to={`/users/${user.id}/edit`} >edit</Link>
+                            <Link to={`/users/${user.id}/edit`} >Delete</Link>
                         </figcaption>
 
                     </figure>
@@ -160,3 +163,4 @@ class UserPage extends Component {
 }
 
 export default UserPage;
+// 

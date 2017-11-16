@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import SignUpForm from './SignUpForm'
 import {Redirect} from 'react-router-dom'
 import styled from 'styled-components';
+import GoalPage from './GoalPage'
+
 
 const Follow = styled.div`
 body {
@@ -70,15 +72,12 @@ div.profile-stats {
   background: -ms-linear-gradient(top,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
   background: linear-gradient(to bottom,  rgba(255,255,255,0.5) 0%,rgba(0,0,0,0.51) 3%,rgba(0,0,0,0.75) 61%,rgba(0,0,0,0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80000000',GradientType=0 );
-
 }
-
 div.profile-stats ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 div.profile-stats ul li {
   color: #efefef;
   display: block;
@@ -88,19 +87,16 @@ div.profile-stats ul li {
   margin-right: 50px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7)
 }
-
 div.profile-stats li span {
   display: block;
   font-size: 16px;
   font-weight: normal;
 }
-
 div.profile-stats a.follow {
   display: block;
   float: right;color: #ffffff;
   margin-top: 5px;
   text-decoration: none;
-  
   /* This is a copy and paste from Bootstrap */
   background-color: #49afcd;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -123,9 +119,7 @@ div.profile-stats a.follow {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
-
 div.profile-stats a.follow.followed {
-  
   /* Once again copied from Boostrap */
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -141,7 +135,6 @@ div.profile-stats a.follow.followed {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
-
 header>h1 {
   bottom: -50px;
   color: #354B63;
@@ -150,9 +143,11 @@ header>h1 {
   position: absolute;
   z-index: 5;
 }
-
 `
 
+const Tweet = styled.div`
+
+`
 
 class IdPage extends Component {
     state = {
@@ -226,10 +221,8 @@ class IdPage extends Component {
                <Follow>
 
                <h1>Be Happy <small>Social Network for Inspriational Quotes.</small></h1>
-               {this.state.goals.map((goal) => {
-                    return (
-<header>
-<Link key={goal.id} to={`/${goal.id}`} />
+               
+               <header>
   <figure className="profile-banner">
     <img src="https://unsplash.it/975/300" alt="Profile banner" />
   </figure>
@@ -248,9 +241,18 @@ class IdPage extends Component {
     </a>
   </div>
   <h1> {this.state.user.name}<small></small></h1>
+
+  <div>
+
+  </div>
+
+
 </header>
-               )})}     
-    </Follow>
+</Follow> 
+
+<GoalPage goals={this.state.goals}/>
+               
+   
            </div>
         );
     }

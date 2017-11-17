@@ -21,7 +21,7 @@ h1 {
 }
 
 h1>small {
-  color: #aaaaaa;
+  color: ;
   font-size: .5em;
 }
 

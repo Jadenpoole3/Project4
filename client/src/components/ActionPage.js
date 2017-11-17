@@ -118,104 +118,7 @@ url('http://farm4.staticflickr.com/3348/3344695759_e87cc9ea96_o.jpg');
 .container:hover .name,.container:hover + .comment{
   opacity:1;
 }
-.styled-checkbox {
-  position: absolute; // take it out of document flow
-  opacity: 0; // hide it
 
-  & + label {
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  // Box.
-  & + label:before {
-    content: '';
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: text-top;
-    width: 20px;
-    height: 20px;
-    background: white;
-  }
-
-  // Box hover
-  &:hover + label:before {
-    background: #f35429;
-  }
-  
-  // Box focus
-  &:focus + label:before {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-  }
-
-  // Box checked
-  &:checked + label:before {
-    background: #f35429;
-  }
-  
-  // Disabled state label.
-  &:disabled + label {
-    color: #b8b8b8;
-    cursor: auto;
-  }
-
-  // Disabled box.
-  &:disabled + label:before {
-    box-shadow: none;
-    background: #ddd;
-  }
-
-  // Checkmark. Could be replaced with an image
-  &:checked + label:after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 9px;
-    background: white;
-    width: 2px;
-    height: 2px;
-    box-shadow: 
-      2px 0 0 white,
-      4px 0 0 white,
-      4px -2px 0 white,
-      4px -4px 0 white,
-      4px -6px 0 white,
-      4px -8px 0 white;
-    transform: rotate(45deg);
-  }
-}
-
-// Demo-only styles
-// --------------
-
-html {
-  background: lightgray;
-}
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.unstyled {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-li {
-  margin: 20px 0;
-}
-
-.centered {
-  width: 300px;
-  margin: auto;
-}
-
-.title {
-  text-align: center;
-  color: rgb(69, 113, 236);
-}
 `
 
 
@@ -244,17 +147,23 @@ class ActionPage extends Component {
             {this.state.action_items.map((action_item) => {
                 return (
                     <Action>
-                          <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1"/>
-    <label for="styled-checkbox-1">Checkbox</label>
+    
+    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1"/>
+    <label for="styled-checkbox-1">Completed</label>
+    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1"/>
+    <label for="styled-checkbox-1">In Progress</label>
+    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1"/>
+    <label for="styled-checkbox-1">Started</label>
+
                     <div class="entry">
   
   <div class="container">    
     <div class="button entypo-chat"></div>
-    <div class="name">Jane Doe
-      <span class="small">Wheteverist</span>      
+    <div class="name">Action Item
+      <span class="small">{action_item.name}</span>      
     </div>
     <div class="photo">
-      <img src="http://farm3.staticflickr.com/2612/4172547476_1bd2263c1b_q.jpg" alt="" class="pic"/>
+      <img src="https://us.123rf.com/450wm/poemsuk/poemsuk1511/poemsuk151100022/48162242-busy-business-people-working-hard-on-his-desk-in-office-with-a-lot-of-paper-work-business-conceptual.jpg" alt="" class="pic"/>
     </div>
   </div>
 

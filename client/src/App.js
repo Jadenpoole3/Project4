@@ -9,6 +9,8 @@ import IdPage from './components/IdPage'
 import SignUpForm from './components/SignUpForm'
 import EditPage from './components/EditPage'
 import ActionPage from './components/ActionPage'
+import styled from 'styled-components'
+
 
 
 

@@ -13,13 +13,22 @@ class QuotePage extends Component {
     
     getQuote = async () => {
         try {
-            const res = await axios.get("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10")
-            .header("X-Mashape-Key", "uLWQJ8sGGUmshhdhHDUNrw3OGqbwp183senjsn2mZZpQBfwcQ9")
-            .header("Accept", "application/json")
-            .end(function (result) {
-              console.log(result.status, result.headers, result.body);
-            });
-            this.setState({quote: res.data})
+            const res = await axios.get("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10", {
+                headers: {
+                    "X-Mashape-Key": "uLWQJ8sGGUmshhdhHDUNrw3OGqbwp183senjsn2mZZpQBfwcQ9",
+                    // "Accept": "application/json"
+                }
+            })
+            // .header("X-Mashape-Key", "uLWQJ8sGGUmshhdhHDUNrw3OGqbwp183senjsn2mZZpQBfwcQ9")
+            // .header("Accept", "application/json")
+            // .end(function (result) {
+            //   console.log(result.status, result.headers, result.body);
+            // });
+            console.log(res)
+            var num = Math.floor(Math.random() * 10)
+            this.setState({quote: res.data[num]})
+
+           
         } catch (err) {
             console.log(err)
         }
@@ -28,6 +37,8 @@ class QuotePage extends Component {
         return (
             <div>
                 <h1>Heres a Random Quote to get you going </h1>
+                <h3>Quote by: {this.state.quote.author}</h3>
+                <p>Quote: {this.state.quote.quote}</p>
             </div>
         );
     }

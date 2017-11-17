@@ -17,7 +17,8 @@ const Card = styled.div`
   color: #ffffff;
   text-align: left;
   line-height: 1.4em;
-  background-color: #141414;
+  background-color:	conditioner;
+
 }
 .snip1336 * {
   -webkit-box-sizing: border-box;
@@ -97,7 +98,10 @@ const Card = styled.div`
 }
 
 button {
-
+margin-right: 4%;
+  border-color: #2980b9;
+  color: #2980b9; 
+}
 `
 
 
@@ -143,7 +147,7 @@ class UserPage extends Component {
                     <div>
                     <Link key={user.id} to={`/${user.id}`} />
                     <figure className="snip1336">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+                        <img src="http://ognature.com/wp-content/uploads/2017/05/ocean-sea-waves-nature-beautiful-blue-peaceful-sky-night-amazing-clouds-hd.jpg" alt="sample87" />
                         <figcaption>
                             <img src={user.image_url} alt="profile-sample4" className="profile" />
                             <h2>{user.name}<span></span></h2>

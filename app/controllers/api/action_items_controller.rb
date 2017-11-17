@@ -1,6 +1,6 @@
 class Api::ActionItemsController < ApplicationController
     def index 
-        @action_items = User.find_by_id(params[:user_id]).goals
+        @action_items = User.find_by_id(params[:user_id]).action_items
         render json: @action_items
     end 
 

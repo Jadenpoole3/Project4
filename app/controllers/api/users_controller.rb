@@ -29,10 +29,8 @@ class Api::UsersController < ApplicationController
         user_id = params[:id]
         @user = User.find_by_id(user_id)
         @user.destroy
-
-        render json: {
-            msg: "Deleted"
-        }
+        @users = User.all
+        render json: @users
     end 
 
     private 

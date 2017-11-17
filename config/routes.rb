@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
     namespace :api do
       resources :users do 
-        resources :goals do 
-          resources :action_items
+        resources :goals 
+        resources :action_items
 
       
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     # get "/users/:id/goals", to: "goals#index", as: "goals"
 
 
-        end 
+        
       end     
 end
 end 

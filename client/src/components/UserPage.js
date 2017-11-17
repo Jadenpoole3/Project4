@@ -95,6 +95,9 @@ const Card = styled.div`
   letter-spacing: 1px;
   opacity: 0.8;
 }
+
+button {
+
 `
 
 
@@ -127,8 +130,8 @@ class UserPage extends Component {
     }
     deleteUser = async (user) => {
         console.log(user)
-        const response = await axios.delete(`/users/${user.id}`)
-        await this.setState({ posts: response.data })
+        const response = await axios.delete(`/api/users/${user.id}`)
+        await this.setState({ users: response.data })
 
     }
     render() {
@@ -147,9 +150,9 @@ class UserPage extends Component {
                             <h2>{user.age}</h2>
                             <p>{user.bio} </p>
                             <Link to={`/users/${user.id}`} className="follow">Follow</Link>
-                            <a href="#" className="info">Goals</a>
+                            <Link to={`/users/${user.id}/ActionPage`} className="info">Action Items</Link>
                             <Link to={`/users/${user.id}/edit`} >edit</Link>
-                            <Link to={`/users/${user.id}/edit`} >Delete</Link>
+                            <button onClick={() => this.deleteUser(user)}>Delete</button>
                         </figcaption>
 
                     </figure>

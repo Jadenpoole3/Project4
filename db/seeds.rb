@@ -16,6 +16,10 @@ danny = User.create({name:"User", age: 47, image_url: "https://media.wmagazine.c
 lebron.goals.create({description: "lebron", name: "motivation", time: "5 days"})
 jay_z.goals.create({description: "jay", name: "motivation", time: "5 days"})
 will.goals.create({description: "Will", name: "motivation", time: "5 days"})
-user.create({description: "User", name: "motivation", time: "5 days"})
+danny.goals.create({description: "User", name: "motivation", time: "5 days"})
+
 lebron.goals.first.action_items.create({content: "im going to make it happen", active: "true", name: "action"})
+jay_z.goals.first.action_items.create({content: "im going to make it happen", active: "true", name: "action"})
+will.goals.first.action_items.create({content: "im going to make it happen", active: "true", name: "action"})
+danny.goals.first.action_items.create({content: "im going to make it happen", active: "true", name: "action"})
 

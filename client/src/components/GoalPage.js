@@ -168,6 +168,7 @@ class GoalPage extends Component {
   <figcaption>
     <h2>{goal.name} <span></span></h2>
     <p>{goal.description}</p>
+    <p>{goal.time}</p>
     <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
   </figcaption>
   )
@@ -175,7 +176,7 @@ class GoalPage extends Component {
                 )}
   <div class="image"><img src="http://dodinsky.com/wp-content/uploads/2017/08/1c4a3ead8b48ac5dcb0c5bbb7e933def-gag-workout-motivation.jpg" alt="sample4"/></div>
   <div class="position">
-
+<Link to={`/user/${this.props.userId}/ActionPage`}> Action Items</Link>
   </div>
 </figure>
     

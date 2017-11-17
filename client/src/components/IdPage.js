@@ -153,6 +153,7 @@ class IdPage extends Component {
     state = {
         user: {},
         goals:[],
+        action_items: [],
         redirectToUser: false
 
     }
@@ -160,6 +161,7 @@ class IdPage extends Component {
     async componentWillMount() {
         this.getUser()
         this.getAllGoals()
+
         
         
     }
@@ -182,6 +184,8 @@ class IdPage extends Component {
         console.log(res.data)
         this.setState({goals: res.data})
     }
+
+    
     handleDelete = async () => {
         const userId = this.props.match.params.userId
         const response = await axios.delete(`/api/users/${userId}`)
@@ -250,7 +254,7 @@ class IdPage extends Component {
 </header>
 </Follow> 
 
-<GoalPage goals={this.state.goals}/>
+<GoalPage goals={this.state.goals} userId={this.props.match.params.userId}/>
                
    
            </div>

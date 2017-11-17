@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
-import GoalPage from './components/GoalPage'
+import QuotePage from './components/QuotePage'
 import UserPage from './components/UserPage'
 import IdPage from './components/IdPage'
 import SignUpForm from './components/SignUpForm'
@@ -27,8 +27,8 @@ class App extends Component {
       <Route exact path="/users/:userId/edit" component={EditPage} />
       <Route exact path="/users" component={UserPage} />
       <Route exact path="/users/:userId" component={IdPage} />
-      <Route exact path="/GoalPage" component={GoalPage}/>
-      <Route exact path="/ActionPage" component={ActionPage}/>
+      <Route exact path="/QuotePage" component={QuotePage}/>
+      <Route exact path="/user/:userId/ActionPage" component={ActionPage}/>
       <Route exact path="/" component={SignUpForm}/>
       </Switch>
        </Router>

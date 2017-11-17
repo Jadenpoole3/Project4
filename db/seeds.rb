@@ -18,8 +18,8 @@ jay_z.goals.create({description: "My rapping sucks at the moment I need to get b
 will.goals.create({description: "I suck in the recent movies I played in. I either need to have better movies or just quit", name: "To be a Better Act", time: "5 days"})
 danny.goals.create({description: "I am a user I dont care about you", name: "motivation", time: "5 days"})
 
-lebron.goals.first.action_items.create({content: "Im going to kick everybody off the team", active: "true", name: "action"})
-jay_z.goals.first.action_items.create({content: "Im going to have other people write my lyrics", active: "true", name: "action"})
-will.goals.first.action_items.create({content: "Im going to pick better movies to act in", active: "true", name: "action"})
-danny.goals.first.action_items.create({content: "I don't have action item I am a user I dont care", active: "true", name: "action"})
+lebron.goals.first.action_items.create({content: "Im going to kick everybody off the team", active: "true", name: "To Be Better"})
+jay_z.goals.first.action_items.create({content: "Im going to have other people write my lyrics", active: "true", name: "To just let it go"})
+will.goals.first.action_items.create({content: "Im going to pick better movies to act in", active: "true", name: "To make better movie decsions"})
+danny.goals.first.action_items.create({content: "I don't have action item I am a user I dont care", active: "true", name: "Banana"})
 

@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Be Happy 
 
-Things you may want to cover:
+# Heroku 
 
-* Ruby version
+# Wireframes
+![./images/Quotes.png](./images/Quotes.png)]
+![./images/GoalPage.png](./images/GoalPage.png)]
+![./images/SignUpPage.png](./images/SignUpPage.png)]
+![./images/UserPage.png](./images/UserPage.png)]
+![./images/ActionItem.png](./images/ActionItem.png)]
 
-* System dependencies
 
-* Configuration
+# Erd 
+![./images/Erd.jpg](./images/Erd.jpg)
 
-* Database creation
+I created a app where you can go to different User Pages and see their goals. You can go through their goals and see what action items they are going to take to accomplish those goals. 
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

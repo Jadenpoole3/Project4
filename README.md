@@ -1,9 +1,10 @@
 # README
 
 # Be Happy 
-
+I created a app where you can go to a User's Page and see what are their goals. You can go through their goals and see what action items they are going to take to accomplish those goals. This app is made to motivate people to accomplishing their goals. 
 # Heroku
 https://be-happier.herokuapp.com/
+
 
 # Wireframes
 ![./images/Quotes.png](./images/Quotes.png)]
@@ -18,7 +19,3 @@ https://be-happier.herokuapp.com/
 
 # Trello 
 https://trello.com/b/z2L5yyTe/project-4-app
-
-# I created a app where you can go to a User's Page and see what are their goals. You can go through their goals and see what action items they are going to take to accomplish those goals. This app is made to motivate people to accomplishing their goals. 
-
-

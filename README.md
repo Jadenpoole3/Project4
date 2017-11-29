@@ -2,7 +2,8 @@
 
 # Be Happy 
 
-# Heroku 
+# Heroku
+https://be-happier.herokuapp.com/
 
 # Wireframes
 ![./images/Quotes.png](./images/Quotes.png)]
@@ -18,6 +19,6 @@
 # Trello 
 https://trello.com/b/z2L5yyTe/project-4-app
 
-I created a app where you can go to different User Pages and see their goals. You can go through their goals and see what action items they are going to take to accomplish those goals. 
+# I created a app where you can go to a User's Page and see what are their goals. You can go through their goals and see what action items they are going to take to accomplish those goals. This app is made to motivate people to accomplishing their goals. 
 
 
